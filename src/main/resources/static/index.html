@@ -16,7 +16,7 @@
         body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #333; scroll-behavior: smooth; }
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; }
         
-        /* === INFO SUPERIOR (NAVBAR BLANCO) === */
+        /* === INFO SUPERIOR === */
         .top-info-bar {
             background-color: white;
             padding: 8px 0;
@@ -31,7 +31,7 @@
         }
         .top-bar-text span { color: var(--rojo-logo); }
 
-        /* === HEADER / HERO UNIFICADO (TAMAÑO COMPACTO CORREGIDO) === */
+        /* === HERO HEADER === */
         .hero-header {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070');
@@ -43,19 +43,17 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        /* El Logo Rojo (TAMAÑO COMPACTO Y CENTRADO) */
         .main-logo-hero {
             max-width: 180px; 
             width: 60%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
-            margin-bottom: 15px; /* Reducido un poco */
+            margin-bottom: 15px;
         }
 
-        /* === REDES SOCIALES (MOVIDAS ABAJO DEL LOGO) === */
         .social-container-top {
-            margin-bottom: 15px; /* Espacio antes del eslogan */
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -97,7 +95,7 @@
             text-transform: uppercase; text-align: center;
         }
 
-        /* === BOTONES WHATSAPP Y MAPA === */
+        /* === BOTONES === */
         .btn-whatsapp-sede {
             background-color: var(--whatsapp-green);
             color: white; border: none; border-radius: 30px;
@@ -115,6 +113,7 @@
             transition: 0.3s; text-decoration: none; width: 100%;
             font-size: 0.9rem;
         }
+        .btn-mapa-sede:hover { background-color: #f8f9fa; color: #000; }
 
         .card-tienda {
             border: none; border-radius: 25px;
@@ -124,7 +123,6 @@
         }
         .card-tienda:hover { transform: translateY(-5px); }
 
-        /* === FOOTER === */
         footer { background-color: var(--negro-fuerte); color: white; padding: 40px 0; text-align: center; }
     </style>
 </head>
@@ -140,15 +138,12 @@
 
     <header class="hero-header">
         <div class="container">
-            
             <img src="/img/super-liquidator.jpeg" alt="Superliquidator Logo" class="main-logo-hero">
-
             <div class="social-container-top">
                 <a href="https://www.facebook.com/share/1B97N5y9f8/" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/super_liquidator?igsh=MWwycnA1cTB0NnA3Nw==" target="_blank"><i class="bi bi-instagram"></i></a>
                 <a href="https://www.tiktok.com/@superliquidator?_r=1&_t=ZS-95YyJfVoVyH" target="_blank"><i class="bi bi-tiktok"></i></a>
             </div>
-
             <p class="hero-tagline">Fabricantes de Moda Colombiana</p>
         </div>
     </header>
@@ -194,7 +189,6 @@
         <div class="container">
             <h4 class="mb-3 text-danger">SUPERLIQUIDATOR</h4>
             <p class="text-secondary small mb-3">© 2026 SUPERLIQUIDATOR | Expertos en Confección Nacional</p>
-            
             <div class="d-flex justify-content-center gap-3">
                 <a href="https://www.facebook.com/share/1B97N5y9f8/" target="_blank" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/super_liquidator?igsh=MWwycnA1cTB0NnA3Nw==" target="_blank" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
@@ -204,7 +198,6 @@
     </footer>
 
     <script>
-        // Datos de sedes con números de WhatsApp reales pasados por el usuario
         const sedes = [
             {n: "Floresta", d: "Cra 69 #98a-66", t: "3214241749"},
             {n: "Centro", d: "Cra 10 #8-36", t: "3214241831"},
@@ -217,7 +210,12 @@
         ];
 
         const container = document.getElementById('grid-sedes');
+        
         sedes.forEach(s => {
+            // Ajustamos la ciudad para que Google Maps sea preciso
+            const ciudad = s.n === "Fusagasugá" ? "Fusagasuga" : "Bogota";
+            const queryMapa = encodeURIComponent(`${s.d}, ${ciudad}, Colombia`);
+            
             container.innerHTML += `
                 <div class="col-md-6 col-lg-3">
                     <div class="card card-tienda h-100 p-3 text-center">
@@ -227,7 +225,7 @@
                             <a href="https://wa.me/57${s.t}" target="_blank" class="btn-whatsapp-sede shadow-sm">
                                 <i class="bi bi-whatsapp"></i> WhatsApp
                             </a>
-                            <a href="http://googleusercontent.com/maps.google.com/0{encodeURIComponent(s.d + ' Bogota')}" target="_blank" class="btn-mapa-sede">
+                            <a href="https://www.google.com/maps/search/?api=1&query=${queryMapa}" target="_blank" class="btn-mapa-sede">
                                 <i class="bi bi-geo-alt"></i> Ver Mapa
                             </a>
                         </div>
