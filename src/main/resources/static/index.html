@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superliquidator | Expertos en Confección Nacional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rojo-logo: #e63946;
+            --whatsapp-green: #25d366;
+            --negro-fuerte: #111111;
+        }
+        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #333; scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; }
+        
+        /* === INFO SUPERIOR (NAVBAR BLANCO) === */
+        .top-info-bar {
+            background-color: white;
+            padding: 8px 0;
+            border-bottom: 4px solid var(--rojo-logo);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .top-bar-text {
+            color: var(--negro-fuerte);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+        .top-bar-text span { color: var(--rojo-logo); }
+
+        /* === HEADER / HERO UNIFICADO (TAMAÑO COMPACTO CORREGIDO) === */
+        .hero-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            padding: 30px 0; 
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* El Logo Rojo (TAMAÑO COMPACTO Y CENTRADO) */
+        .main-logo-hero {
+            max-width: 180px; 
+            width: 60%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+            margin-bottom: 15px; /* Reducido un poco */
+        }
+
+        /* === REDES SOCIALES (MOVIDAS ABAJO DEL LOGO) === */
+        .social-container-top {
+            margin-bottom: 15px; /* Espacio antes del eslogan */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-container-top a {
+            color: white;
+            font-size: 1.3rem;
+            transition: 0.3s ease;
+        }
+        .social-container-top a:hover {
+            color: var(--rojo-logo);
+            transform: translateY(-2px);
+        }
+
+        .hero-tagline {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        /* === MERCANCÍA === */
+        .mercancia-container {
+            width: 100%; height: 350px;
+            overflow: hidden; border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            background: #eee;
+        }
+        .mercancia-container img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .mercancia-container:hover img { transform: scale(1.08); }
+        .mercancia-tag {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: var(--rojo-logo); color: white;
+            padding: 10px; font-weight: bold; font-size: 1rem;
+            text-transform: uppercase; text-align: center;
+        }
+
+        /* === BOTONES WHATSAPP Y MAPA === */
+        .btn-whatsapp-sede {
+            background-color: var(--whatsapp-green);
+            color: white; border: none; border-radius: 30px;
+            padding: 10px 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: 0.3s; text-decoration: none; width: 100%;
+            font-size: 0.9rem;
+        }
+        .btn-whatsapp-sede:hover { background-color: #1eb954; color: white; }
+        
+        .btn-mapa-sede {
+            background-color: white; color: #333; border: 1px solid #333; border-radius: 30px;
+            padding: 10px 20px; font-weight: 600;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: 0.3s; text-decoration: none; width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .card-tienda {
+            border: none; border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-top: 5px solid var(--rojo-logo);
+            transition: 0.3s; background: white;
+        }
+        .card-tienda:hover { transform: translateY(-5px); }
+
+        /* === FOOTER === */
+        footer { background-color: var(--negro-fuerte); color: white; padding: 40px 0; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <div class="top-info-bar text-center shadow-sm sticky-top">
+        <div class="container">
+            <div class="top-bar-text">
+                <i class="bi bi-geo-alt-fill text-danger"></i> BOGOTÁ <span>–</span> FUSAGASUGÁ
+            </div>
+        </div>
+    </div>
+
+    <header class="hero-header">
+        <div class="container">
+            
+            <img src="/img/super-liquidator.jpeg" alt="Superliquidator Logo" class="main-logo-hero">
+
+            <div class="social-container-top">
+                <a href="https://www.facebook.com/share/1B97N5y9f8/" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/super_liquidator?igsh=MWwycnA1cTB0NnA3Nw==" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.tiktok.com/@superliquidator?_r=1&_t=ZS-95YyJfVoVyH" target="_blank"><i class="bi bi-tiktok"></i></a>
+            </div>
+
+            <p class="hero-tagline">Fabricantes de Moda Colombiana</p>
+        </div>
+    </header>
+
+    <section class="container py-5 text-center">
+        <h2 class="mb-5 text-danger display-6 border-bottom pb-3">NUESTRA CONFECCIÓN</h2>
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <div class="mercancia-container">
+                    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800" alt="Jeans">
+                    <div class="mercancia-tag">PANTALONES</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="mercancia-container">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=800" alt="Camisas">
+                    <div class="mercancia-tag">CAMISAS</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="mercancia-container">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=800" alt="Chaquetas">
+                    <div class="mercancia-tag">CHAQUETAS</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="mercancia-container">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800" alt="Damas">
+                    <div class="mercancia-tag">DAMAS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiendas" class="py-5 bg-light rounded-5 p-4">
+        <div class="container">
+            <h2 class="text-center mb-5">NUESTROS PUNTOS DE VENTA</h2>
+            <div class="row g-4" id="grid-sedes"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h4 class="mb-3 text-danger">SUPERLIQUIDATOR</h4>
+            <p class="text-secondary small mb-3">© 2026 SUPERLIQUIDATOR | Expertos en Confección Nacional</p>
+            
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://www.facebook.com/share/1B97N5y9f8/" target="_blank" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/super_liquidator?igsh=MWwycnA1cTB0NnA3Nw==" target="_blank" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.tiktok.com/@superliquidator?_r=1&_t=ZS-95YyJfVoVyH" target="_blank" class="text-white fs-5"><i class="bi bi-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos de sedes con números de WhatsApp reales pasados por el usuario
+        const sedes = [
+            {n: "Floresta", d: "Cra 69 #98a-66", t: "3214241749"},
+            {n: "Centro", d: "Cra 10 #8-36", t: "3214241831"},
+            {n: "Bosa", d: "Cra 88c #59b 18 sur", t: "3112694406"},
+            {n: "Fusagasugá", d: "C.C. Avenida local 23", t: "3214177263"},
+            {n: "Américas", d: "Cra 62 #12-46", t: "3214193929"},
+            {n: "Restrepo", d: "CL 18 sur 19-40", t: "3112715006"},
+            {n: "Paseo Villa del Río", d: "Diag. 57 C Sur #62-60 L-163", t: "3112723768"},
+            {n: "Hayuelos", d: "C.C. Hayuelos Local 127", t: "3223321598"}
+        ];
+
+        const container = document.getElementById('grid-sedes');
+        sedes.forEach(s => {
+            container.innerHTML += `
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-tienda h-100 p-3 text-center">
+                        <h6 class="text-danger fw-bold mb-2">${s.n}</h6>
+                        <p class="small text-muted mb-3" style="font-size: 0.75rem;">${s.d}</p>
+                        <div class="d-grid gap-2 mt-auto">
+                            <a href="https://wa.me/57${s.t}" target="_blank" class="btn-whatsapp-sede shadow-sm">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="http://googleusercontent.com/maps.google.com/0{encodeURIComponent(s.d + ' Bogota')}" target="_blank" class="btn-mapa-sede">
+                                <i class="bi bi-geo-alt"></i> Ver Mapa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
